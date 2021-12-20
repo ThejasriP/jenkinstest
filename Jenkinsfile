@@ -44,6 +44,18 @@ pipeline {
                 echo '## TODO DEPLOYMENT ##'
             }
         }
+	    stage('JUnit')
+	     {
+		     steps{
+			       junit '/target/surefire-reports/*.xml'
+		     }
+	    }
+	    
+	    stage('Qwikeye Publisher'){
+		    steps{
+                      qwikeye 'mahesh'
+		    }
+	    }
     }
     
     post {
