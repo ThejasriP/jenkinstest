@@ -24,26 +24,7 @@ pipeline {
                 jacoco()
             }
         }
-        stage('Sonar') {
-            steps {
-                echo 'Sonar Scanner'
-               	//def scannerHome = tool 'SonarQube Scanner 3.0'
-			    withSonarQubeEnv('SonarQube Server') {
-			    	bat 'C:/Users/M1056213/Documents/Softwares/sonar-scanner-3.0.3.778/bin/sonar-scanner'
-			    }
-            }
-        }
-        stage('Package') {
-            steps {
-                echo 'Packaging'
-                bat 'mvn package -DskipTests'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo '## TODO DEPLOYMENT ##'
-            }
-        }
+       
 	    stage('JUnit')
 	     {
 		     steps{
