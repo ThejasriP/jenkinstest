@@ -31,14 +31,13 @@ pipeline {
 			       junit '/target/surefire-reports/*.xml'
 		     }
 	    }
-	     stage('SonarQube analysis 1') {
+	     stage('Sonar') {
             steps {
-                sh 'mvn clean package sonar:sonar'
-            }
-        }
-        stage("Quality Gate 1") {
-            steps {
-                waitForQualityGate abortPipeline: true
+                echo 'Sonar Scanner'
+               	//def scannerHome = tool 'SonarQube Scanner 3.0'
+			    withSonarQubeEnv('SonarQube Server') {
+			    	bat 'C:/Users/M1074440/Downloads/sonarqube-7.7/bin/windows-x86-64'
+			    }
             }
         }
 	    
