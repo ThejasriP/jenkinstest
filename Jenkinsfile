@@ -36,7 +36,8 @@ pipeline {
                 echo 'Sonar Scanner'
                	//def scannerHome = tool 'SonarQube Scanner 3.0'
 			    withSonarQubeEnv('SonarQube Server') {
-			    	bat 'C:/Users/M1074440/Downloads/sonarqube-7.7/bin/windows-x86-64'
+// 			    	bat 'C:/Users/M1074440/Downloads/sonarqube-7.7/bin/windows-x86-64'
+				    sh "./gradlew sonarqube"
 			    }
             }
         }
