@@ -41,7 +41,11 @@ pipeline {
 			    }
             }
         }
-	    
+	    stage("Quality gate"){
+		    steps{
+			    waitForQualityGate abortPipeline: true
+		    }
+	    }
 	    stage('Qwikeye Publisher'){
 		    steps{
                       qwikeye 'mahesh'
