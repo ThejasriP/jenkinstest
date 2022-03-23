@@ -35,7 +35,7 @@ pipeline {
             steps {
 //                 echo 'Sonar Scanner'
 		    withSonarQubeEnv('SonarQube Server') {
-		          bat './gradlew sonarqube'
+		          bat "./gradlew sonarqube"
 		    }
 	    }
 	   }
