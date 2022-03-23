@@ -35,7 +35,7 @@ pipeline {
             steps {
 //                 echo 'Sonar Scanner'
 		    withSonarQubeEnv('SonarQube Server') {
-		          bat "./gradlew sonarqube"
+		          bat "C:/Users/M1074440/Downloads/sonarqube-7.7/bin/windows-x86-64/StartSonar"
 		    }
 	    }
 	   }
